@@ -11,7 +11,7 @@
 
 <body>
     <h1>포켓몬도감만들기</h1>
-    <p>피카츄, 파이리, 꼬부기를 구별해서 이에 대한 설명을 보여주는 웹 앱</p>
+    <p>피카츄, 파이리, 꼬부기, 뮤츠를 구별해서 이에 대한 설명을 보여주는 웹 앱</p>
     <button type="button" onclick="init()">Start</button>
     <button type="button" onclick="predict()">Predict</button>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -97,19 +97,19 @@
             // predict can take in an image, video or canvas html element
             var image = document.getElementById("my-image")
             const prediction = await model.predict(image, false);
-            if(prediction[0].probability > 0.7){
+            if(prediction[0].probability > 0.4){
                 labelContainer.childNodes[0].innerHTML = "피카츄입니다."
                 labelContainer.childNodes[0].innerHTML = "포켓몬스터 프랜차이즈의 상징이자 영원한 마스코트인 포켓몬. 1000마리 안팎을 오가는 무수히 많은 포켓몬들 중에서도 가장 유명하며, 그만큼 인기도 많은 포켓몬이다. 기본적으로 담당 성우는 전 세계국 공통으로 오오타니 이쿠에.[9]"
             }
-            else if(prediction[1].probability > 0.7){
+            else if(prediction[1].probability > 0.4){
                 labelContainer.childNodes[0].innerHTML = "파이리입니다."
                 labelContainer.childNodes[0].innerHTML = "1세대, 3세대 리메이크작의 불꽃 타입 스타팅 리자몽의 초기형태. SBS에서 방영했을 때 성우는 차명화.[3] 성우는 사카구치 다이스케/최하나."
             }
-            else if(prediction[2].probability > 0.7){
+            else if(prediction[2].probability > 0.4){
                 labelContainer.childNodes[0].innerHTML = "꼬북이입니다."
                 labelContainer.childNodes[0].innerHTML = "물 스타팅 중에서 순서상 제 1번 자리를 차지하는 거북 포켓몬. 1세대의 물 타입 스타팅인 꼬부기의 최종 진화형"
 
-            } else if(prediction[3].probability >0.7){
+            } else if(prediction[3].probability >0.4){
                 labelContainer.childNodes[0].innerHTML = "뮤츠입니다."
                 labelContainer.childNodes[0].innerHTML = "뮤츠입니다."
             }
